@@ -328,11 +328,30 @@ function _st(t){
 }
 
 function _atuCont(){
+
+  var badge=document.getElementById('counter-num');
+  var barra=document.getElementById('progress-fill');
+  var usados=document.getElementById('progress-used');
+
   var r=_dl?'∞':Math.max(0,_CFG.limite-_us);
-  document.getElementById('counter-num').textContent=r;
-  var p=Math.min(100,(_us/_CFG.limite)*100);
-  document.getElementById('progress-fill').style.width=p+'%';
-  document.getElementById('progress-used').textContent=_us;
+
+  if(badge){
+    badge.textContent=r;
+  }
+
+  var p=Math.min(
+    100,
+    (_us/_CFG.limite)*100
+  );
+
+  if(barra){
+    barra.style.width=p+'%';
+  }
+
+  if(usados){
+    usados.textContent=_us;
+  }
+
 }
 
 function _calc(){
