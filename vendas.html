@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Precificador Shopee para calcular preco de venda, lucro liquido, preco minimo e taxas da plataforma.">
+  <title>Precificador Shopee 2026</title>
+  <link rel="stylesheet" href="landing.css">
+  <link rel="icon" href="icons/icon-192.png">
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Navegacao principal">
+      <a class="brand" href="#topo">
+        <span class="brand-mark">R$</span>
+        <span>Precificador Shopee</span>
+      </a>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="index.html">Testar gratis</a>
+        <a class="btn btn-primary js-buy" href="#comprar">Comprar acesso</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="topo">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Ferramenta para vendedores Shopee</p>
+          <h1>Precificador Shopee 2026</h1>
+          <p class="lead">Calcule preco de venda, lucro liquido, preco minimo e taxas antes de anunciar seus produtos.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary js-buy" href="#comprar">Quero acesso PRO</a>
+            <a class="btn btn-secondary" href="index.html">Abrir calculadora gratis</a>
+          </div>
+          <div class="trust">
+            <span>30 calculos gratis</span>
+            <span>Extrato detalhado</span>
+            <span>Instalavel no celular</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 class="section-title">Pare de vender sem saber sua margem real</h2>
+        <p class="section-sub">A calculadora considera custo do produto, custos extras, margem desejada, tipo de vendedor e faixas de taxas para mostrar o resultado de forma clara.</p>
+        <div class="grid">
+          <article class="card">
+            <strong>Preco sugerido</strong>
+            <p>Veja rapidamente por quanto vender para cobrir custos, taxas e ainda preservar sua margem.</p>
+          </article>
+          <article class="card">
+            <strong>Lucro liquido</strong>
+            <p>Entenda quanto sobra depois dos descontos e encargos aplicados no pedido.</p>
+          </article>
+          <article class="card">
+            <strong>Preco minimo</strong>
+            <p>Tenha uma referencia para nao vender abaixo do ponto de equilibrio.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="comprar">
+      <div class="wrap offer">
+        <div>
+          <h2 class="section-title">Acesso PRO para calcular sem limite</h2>
+          <p class="section-sub">Comece com 30 calculos gratuitos. Quando quiser liberar o acesso completo, compre pela Cakto e use a senha recebida por e-mail para ativar o PRO.</p>
+          <div class="steps">
+            <article class="card">
+              <div class="step-num">1</div>
+              <strong>Compre pela Cakto</strong>
+              <p>Finalize o pagamento no checkout seguro da plataforma.</p>
+            </article>
+            <article class="card">
+              <div class="step-num">2</div>
+              <strong>Receba por e-mail</strong>
+              <p>O link do app e a senha de ativacao chegam no seu e-mail.</p>
+            </article>
+            <article class="card">
+              <div class="step-num">3</div>
+              <strong>Ative o PRO</strong>
+              <p>Digite a senha no app e use com calculos ilimitados.</p>
+            </article>
+          </div>
+        </div>
+        <aside class="price-box">
+          <p class="eyebrow">Oferta inicial</p>
+          <div class="price">R$ 19,90</div>
+          <p class="small">Pagamento unico. Ajuste esse valor depois se desejar vender por outro preco.</p>
+          <div class="checklist">
+            <div>Calculos ilimitados</div>
+            <div>Fluxo PRO no navegador</div>
+            <div>Atualizacoes do arquivo inclusas</div>
+            <div>Acesso pelo celular</div>
+          </div>
+          <div style="height:18px"></div>
+          <a class="btn btn-primary js-buy" href="#comprar">Comprar acesso PRO</a>
+          <p class="small" id="checkout-note">Depois que voce criar o checkout, este botao pode apontar direto para a Cakto.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Precificador Shopee 2026. Ferramenta independente para apoio de precificacao.
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    (function(){
+      var link=(window._CFG&&_CFG.linkCompra)||'';
+      var pronto=link&&link.indexOf('SEU_LINK_HOTMART_OU_CAKTO_AQUI')===-1;
+      if(!pronto)return;
+      document.querySelectorAll('.js-buy').forEach(function(a){a.href=link;});
+      var note=document.getElementById('checkout-note');
+      if(note)note.textContent='Voce sera redirecionado para o checkout seguro da Cakto.';
+    })();
+  </script>
+</body>
+</html>
