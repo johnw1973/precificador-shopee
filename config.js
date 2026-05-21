@@ -1,12 +1,10 @@
-// ═══════════════════════════════════════════════════
-//  CONFIGURAÇÕES — altere somente este bloco
-// ═══════════════════════════════════════════════════
+// CONFIGURACOES - altere somente este bloco
 var _CFG={
-  linkCompra:'https://SEU_LINK_HOTMART_OU_CAKTO_AQUI.com', // ← substitua pelo link real
-  senhas:[
-    'SHOP-2026',   // senha padrão de acesso
-    'PRO-SHOPEE',  // você pode adicionar quantas quiser
-    'ACESSO-PRO'   // cada senha desbloqueia um cliente
+  linkCompra:'https://SEU_LINK_HOTMART_OU_CAKTO_AQUI.com',
+  _x:[
+    '8b3246735f015e4beb553e388f0ae1b4fb54b8bbd546cc40b448835445afb079',
+    'd4a1c7ee5d0d83ff62c579c4c8b643b2cc7b467a38503c79aeedee27f53f0d3e',
+    'd6f8d408171fdae20d9f8f66972ba3a1e9d8bfe0b4d6c77b1c8881b801962b3f'
   ],
   limite:30
 };
@@ -34,4 +32,3 @@ var _TB={
     {max:Infinity,c:12,t:2,f:26,s:1,x:3,lb:'acima de R$500'}
   ]
 };
-
