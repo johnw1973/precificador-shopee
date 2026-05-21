@@ -1,4 +1,4 @@
-﻿// estado interno
+// estado interno
 var _tp='cnpj',_us=0,_dl=false;
 
 function _atuCont(){
@@ -7,7 +7,7 @@ function _atuCont(){
   var barra=document.getElementById('progress-fill');
   var usados=document.getElementById('progress-used');
 
-  var r=_dl?'âˆž':Math.max(0,_CFG.limite-_us);
+  var r=_dl?'∞':Math.max(0,_CFG.limite-_us);
 
   if(badge){
     badge.textContent=r;
@@ -39,7 +39,7 @@ function _atuCont(){
   if(_dl){
     document.getElementById('wrap-progresso').style.display='none';
     var b=document.getElementById('badge-contador');
-    b.innerHTML='<div class="pro-badge">PRO âˆž</div>';
+    b.innerHTML='<div class="pro-badge">PRO ∞</div>';
   }
 })();
 
@@ -68,7 +68,7 @@ function _ativarSenha(){
     document.getElementById('tela-sucesso').classList.add('show');
     document.getElementById('wrap-progresso').style.display='none';
     var b=document.getElementById('badge-contador');
-    b.innerHTML='<div class="pro-badge">PRO âˆž</div>';
+    b.innerHTML='<div class="pro-badge">PRO ∞</div>';
   } else {
     document.getElementById('senha-erro').style.display='block';
     document.getElementById('campo-senha').style.borderColor='#cc2200';
