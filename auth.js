@@ -1,22 +1,43 @@
 // estado interno
 var _tp='cnpj',_us=0,_dl=false;
 
+function _proAtivo(){
+  try{
+    var _k=localStorage.getItem('_psp_k');
+    return !!(_k&&_CFG.senhas.indexOf(_k)>-1);
+  }catch(e){
+    return false;
+  }
+}
+
+function _renderBadge(){
+  var b=document.getElementById('badge-contador');
+  if(!b)return;
+
+  if(_dl){
+    b.innerHTML='<div class="pro-badge">PRO ∞</div>';
+  }else{
+    b.innerHTML='<div class="cn" id="counter-num">'+Math.max(0,_CFG.limite-_us)+'</div><div class="cl">cálculos</div>';
+  }
+}
+
 function _atuCont(){
 
-  var badge=document.getElementById('counter-num');
+  _dl=_proAtivo();
+  _renderBadge();
+
   var barra=document.getElementById('progress-fill');
   var usados=document.getElementById('progress-used');
-
-  var r=_dl?'∞':Math.max(0,_CFG.limite-_us);
-
-  if(badge){
-    badge.textContent=r;
-  }
+  var wrap=document.getElementById('wrap-progresso');
 
   var p=Math.min(
     100,
     (_us/_CFG.limite)*100
   );
+
+  if(wrap){
+    wrap.style.display=_dl?'none':'';
+  }
 
   if(barra){
     barra.style.width=p+'%';
@@ -31,16 +52,10 @@ function _atuCont(){
 (function(){
   try{
     _us=parseInt(localStorage.getItem('_psp_u')||'0')||0;
-    var _k=localStorage.getItem('_psp_k');
-    if(_k&&_CFG.senhas.indexOf(_k)>-1)_dl=true;
+    _dl=_proAtivo();
   }catch(e){}
   _atuCont();
   if(!_dl&&_us>=_CFG.limite)document.getElementById('bloqueio').classList.add('show');
-  if(_dl){
-    document.getElementById('wrap-progresso').style.display='none';
-    var b=document.getElementById('badge-contador');
-    b.innerHTML='<div class="pro-badge">PRO ∞</div>';
-  }
 })();
 
 function _abrirCompra(){window.open(_CFG.linkCompra,'_blank')}
@@ -66,9 +81,7 @@ function _ativarSenha(){
     document.getElementById('tela-senha').classList.remove('show');
     document.getElementById('bloqueio').classList.remove('show');
     document.getElementById('tela-sucesso').classList.add('show');
-    document.getElementById('wrap-progresso').style.display='none';
-    var b=document.getElementById('badge-contador');
-    b.innerHTML='<div class="pro-badge">PRO ∞</div>';
+    _atuCont();
   } else {
     document.getElementById('senha-erro').style.display='block';
     document.getElementById('campo-senha').style.borderColor='#cc2200';
@@ -79,5 +92,3 @@ function _ativarSenha(){
 function _fecharSucesso(){
   document.getElementById('tela-sucesso').classList.remove('show');
 }
-
-
