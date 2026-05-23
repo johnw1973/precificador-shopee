@@ -1,6 +1,6 @@
 // CONFIGURACOES - altere somente este bloco
 var _CFG={
-  linkCompra:'https://SEU_LINK_HOTMART_OU_CAKTO_AQUI.com',
+  linkCompra:'https://pay.cakto.com.br/3668gss_894649',
   _x:[
     '8b3246735f015e4beb553e388f0ae1b4fb54b8bbd546cc40b448835445afb079',
     'd4a1c7ee5d0d83ff62c579c4c8b643b2cc7b467a38503c79aeedee27f53f0d3e',
